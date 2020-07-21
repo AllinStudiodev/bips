@@ -277,7 +277,8 @@ class _ReportConfirmationPageState extends State<ReportConfirmationPage> {
                                           .get();
 
                                   if (snapshot.exists) {
-                                    print('Exists');
+                                    print('data harian telah ada');
+
                                     //data telah ada
                                     Flushbar(
                                       duration: Duration(milliseconds: 1500),
@@ -292,7 +293,9 @@ class _ReportConfirmationPageState extends State<ReportConfirmationPage> {
                                     return snapshot;
                                   }
                                   if (!snapshot.exists) {
-                                    //save data
+                                    print('data harian disimpan');
+
+                                    //save parking harian
                                     await ParkingServices.saveParking(Parking(
                                       name: widget.parking.name,
                                       date: widget.parking.date,
@@ -313,7 +316,8 @@ class _ReportConfirmationPageState extends State<ReportConfirmationPage> {
                                       quantity: totalQuantity,
                                     ));
 
-                                    await IncomeServices.updateIncome(Income(
+                                    //save keseluruhan income
+                                    await IncomeServices.updateAllIncome(Income(
                                       incomeMobil5: incomeMobil5,
                                       incomeMobil7: incomeMobil7,
                                       incomeMotor: incomeMotor,
@@ -327,6 +331,33 @@ class _ReportConfirmationPageState extends State<ReportConfirmationPage> {
                                       totalIncome: totalIncome,
                                       totalQuantity: totalQuantity,
                                     ));
+
+                                    DocumentSnapshot monthlySnapshot =
+                                        await IncomeServices.incomeCollection
+                                            .document(formatMonth(
+                                                widget.parking.date))
+                                            .get();
+
+                                    if (monthlySnapshot.exists) {
+                                      print('update income bulanan');
+
+                                      //update income bulanan
+                                      await IncomeServices.updateMonthlyIncome(
+                                          Income(
+                                        date: widget.parking.date,
+                                        totalIncome: totalIncome,
+                                      ));
+                                    }
+                                    if (!monthlySnapshot.exists) {
+                                      print('tambah baru income bulanan');
+
+                                      //tambah baru income bulanan
+                                      await IncomeServices.addMonthlyIncome(
+                                          Income(
+                                        date: widget.parking.date,
+                                        totalIncome: totalIncome,
+                                      ));
+                                    }
 
                                     Flushbar(
                                       duration: Duration(milliseconds: 1500),

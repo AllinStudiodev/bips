@@ -4,7 +4,7 @@ class IncomeServices {
   static CollectionReference incomeCollection =
       Firestore.instance.collection('income');
 
-  static Future<void> updateIncome(Income income) async {
+  static Future<void> updateAllIncome(Income income) async {
     DocumentSnapshot snapshot = await incomeCollection.document("MCM").get();
 
     int initialMobil5 = snapshot.data['incomeMobil5'];
@@ -50,12 +50,44 @@ class IncomeServices {
     });
   }
 
-  static Future<Income> getIncome() async {
+  static Future<Income> getAllIncome() async {
     DocumentSnapshot snapshot = await incomeCollection.document("MCM").get();
 
     return Income(
       totalIncome: snapshot.data['totalIncome'],
-      totalQuantity: snapshot.data['totalQuantity'],
     );
+  }
+
+  static Future<Income> getMonthlyIncome(DateTime dateTime) async {
+    String date = formatMonth(dateTime);
+
+    DocumentSnapshot snapshot = await incomeCollection.document(date).get();
+
+    return Income(
+      totalIncome: snapshot.data['totalIncome'],
+    );
+  }
+
+  static Future<void> addMonthlyIncome(Income income) async {
+    String date = formatMonth(income.date);
+
+    await incomeCollection.document(date).setData({
+      'date': DateTime.now().millisecondsSinceEpoch,
+      'totalIncome': income.totalIncome ?? 0,
+    });
+  }
+
+  static Future<void> updateMonthlyIncome(Income income) async {
+    String date = formatMonth(income.date);
+
+    DocumentSnapshot snapshot = await incomeCollection.document(date).get();
+
+    int initialIncome = snapshot.data['totalIncome'];
+    int totalIncome = initialIncome + income.totalIncome;
+
+    await incomeCollection.document(date).setData({
+      'date': DateTime.now().millisecondsSinceEpoch,
+      'totalIncome': totalIncome,
+    });
   }
 }

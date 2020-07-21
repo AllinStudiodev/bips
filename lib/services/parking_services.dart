@@ -30,7 +30,7 @@ class ParkingServices {
   static Future<List<Parking>> getParking() async {
     QuerySnapshot snapshot = await parkingCollection
         .orderBy('date', descending: true)
-        .limit(60)
+        .limit(30)
         .getDocuments();
 
     var documents = snapshot.documents;

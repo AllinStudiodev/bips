@@ -22,6 +22,11 @@ formatDate(DateTime date) {
   return formatedDate;
 }
 
+formatMonth(DateTime date) {
+  String formatedMonth = DateFormat("MM-yyyy").format(date);
+  return formatedMonth;
+}
+
 formatNumber(var number) {
   String formatedNumber =
       NumberFormat.currency(symbol: "", decimalDigits: 0).format(number);

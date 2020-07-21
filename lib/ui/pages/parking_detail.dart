@@ -13,27 +13,26 @@ class ParkingDetailPage extends StatefulWidget {
 }
 
 class _ParkingDetailPageState extends State<ParkingDetailPage> {
-  int totalIncome = 0;
-  int totalQuantity = 0;
+  int totalMonthlyIncome = 0;
 
   @override
   void initState() {
     super.initState();
-    getIncome();
+    getMonthlyIncome();
   }
 
   // @override
   // void dispose() {
-  //   getIncome();
+  //   getMonthlyIncome();
   //   super.dispose();
   // }
 
-  Future getIncome() async {
-    Income income = await IncomeServices.getIncome();
+  Future getMonthlyIncome() async {
+    DateTime dateTime = DateTime.now();
+    Income income = await IncomeServices.getMonthlyIncome(dateTime);
 
     setState(() {
-      totalIncome = income.totalIncome;
-      totalQuantity = income.totalQuantity;
+      totalMonthlyIncome = income.totalIncome;
     });
   }
 
@@ -270,8 +269,8 @@ class _ParkingDetailPageState extends State<ParkingDetailPage> {
 
                     SizedBox(height: 15),
                     Text(
-                      "Total Income Keseluruhan : Rp " +
-                          formatNumber(totalIncome),
+                      "Total Income Bulanan : Rp " +
+                          formatNumber(totalMonthlyIncome),
                       textAlign: TextAlign.center,
                       style: blackTextFont.copyWith(
                           fontSize: 17, fontWeight: FontWeight.w600),
