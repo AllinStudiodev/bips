@@ -28,8 +28,8 @@ class _ParkingDetailPageState extends State<ParkingDetailPage> {
   // }
 
   Future getMonthlyIncome() async {
-    DateTime dateTime = DateTime.now();
-    Income income = await IncomeServices.getMonthlyIncome(dateTime);
+    //DateTime dateTime = DateTime.now();
+    Income income = await IncomeServices.getMonthlyIncome(widget.parking.date);
 
     setState(() {
       totalMonthlyIncome = income.totalIncome;
