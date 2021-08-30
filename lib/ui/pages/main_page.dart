@@ -90,11 +90,7 @@ class _MainPageState extends State<MainPage> {
                 },
                 items: [
                   BottomNavigationBarItem(
-                      title: Text(
-                        "Home",
-                        style: GoogleFonts.raleway(
-                            fontSize: 13, fontWeight: FontWeight.w600),
-                      ),
+                      label: "Home",
                       icon: Container(
                         margin: EdgeInsets.only(bottom: 6),
                         height: 20,
@@ -103,11 +99,7 @@ class _MainPageState extends State<MainPage> {
                             : "assets/ic_movie_grey.png"),
                       )),
                   BottomNavigationBarItem(
-                      title: Text(
-                        "Account",
-                        style: GoogleFonts.raleway(
-                            fontSize: 13, fontWeight: FontWeight.w600),
-                      ),
+                      label: "Account",
                       icon: Container(
                         margin: EdgeInsets.only(bottom: 6),
                         height: 20,

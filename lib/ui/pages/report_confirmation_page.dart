@@ -257,10 +257,12 @@ class _ReportConfirmationPageState extends State<ReportConfirmationPage> {
                         : SizedBox(
                             width: 250,
                             height: 45,
-                            child: RaisedButton(
-                                color: mainColor,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8),
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  primary: mainColor,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
                                 ),
                                 child: Text("Create Daily Report",
                                     style:

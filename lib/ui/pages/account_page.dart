@@ -101,35 +101,36 @@ class AccountPage extends StatelessWidget {
                 onTap: () async {
                   PackageInfo packageInfo = await PackageInfo.fromPlatform();
                   showDialog(
-                      context: context,
-                      child: AlertDialog(
-                        title: Text("B Service Parking System",
-                            style: blackTextFont.copyWith(
-                                fontWeight: FontWeight.bold)),
-                        content: Container(
-                          height: 150,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                " Aplikasi ini diperuntukan untuk bagian Parking\n\nB Service Indonesia\n\n",
-                                style: blackTextFont,
+                      builder: (context) => AlertDialog(
+                            title: Text("B Service Parking System",
+                                style: blackTextFont.copyWith(
+                                    fontWeight: FontWeight.bold)),
+                            content: Container(
+                              height: 150,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    " Aplikasi ini diperuntukan untuk bagian Parking\n\nB Service Indonesia\n\n",
+                                    style: blackTextFont,
+                                  ),
+                                  Text(
+                                      "Versi  " +
+                                          packageInfo.appName +
+                                          "  " +
+                                          packageInfo.version +
+                                          "  " +
+                                          packageInfo.buildNumber,
+                                      style:
+                                          blackTextFont.copyWith(fontSize: 15)),
+                                ],
                               ),
-                              Text(
-                                  "Versi  " +
-                                      packageInfo.appName +
-                                      "  " +
-                                      packageInfo.version +
-                                      "  " +
-                                      packageInfo.buildNumber,
-                                  style: blackTextFont.copyWith(fontSize: 15)),
-                            ],
+                            ),
+                            shape: RoundedRectangleBorder(
+                                side: BorderSide(style: BorderStyle.none),
+                                borderRadius: BorderRadius.circular(20)),
                           ),
-                        ),
-                        shape: RoundedRectangleBorder(
-                            side: BorderSide(style: BorderStyle.none),
-                            borderRadius: BorderRadius.circular(20)),
-                      ));
+                      context: context);
                 },
               ),
             ),

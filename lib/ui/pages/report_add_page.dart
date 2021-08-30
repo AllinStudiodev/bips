@@ -128,7 +128,7 @@ class _ReportAddPageState extends State<ReportAddPage> {
                       Flexible(
                         child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.digitsOnly
                           ],
                           keyboardType: TextInputType.number,
                           controller: motorController,
@@ -149,7 +149,7 @@ class _ReportAddPageState extends State<ReportAddPage> {
                       Flexible(
                         child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.digitsOnly
                           ],
                           keyboardType: TextInputType.number,
                           controller: mobil5Controller,
@@ -164,7 +164,7 @@ class _ReportAddPageState extends State<ReportAddPage> {
                       Flexible(
                         child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.digitsOnly
                           ],
                           keyboardType: TextInputType.number,
                           controller: mobil7Controller,
@@ -185,7 +185,7 @@ class _ReportAddPageState extends State<ReportAddPage> {
                       Flexible(
                         child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.digitsOnly
                           ],
                           keyboardType: TextInputType.number,
                           controller: truck15Controller,
@@ -200,7 +200,7 @@ class _ReportAddPageState extends State<ReportAddPage> {
                       Flexible(
                         child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.digitsOnly
                           ],
                           keyboardType: TextInputType.number,
                           controller: truck20Controller,
@@ -221,7 +221,7 @@ class _ReportAddPageState extends State<ReportAddPage> {
                       Flexible(
                         child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.digitsOnly
                           ],
                           keyboardType: TextInputType.number,
                           controller: pickup7Controller,
@@ -236,7 +236,7 @@ class _ReportAddPageState extends State<ReportAddPage> {
                       Flexible(
                         child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.digitsOnly
                           ],
                           keyboardType: TextInputType.number,
                           controller: pickup9Controller,
@@ -257,7 +257,7 @@ class _ReportAddPageState extends State<ReportAddPage> {
                       Flexible(
                         child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.digitsOnly
                           ],
                           keyboardType: TextInputType.number,
                           controller: trailer25Controller,
@@ -272,7 +272,7 @@ class _ReportAddPageState extends State<ReportAddPage> {
                       Flexible(
                         child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.digitsOnly
                           ],
                           keyboardType: TextInputType.number,
                           controller: trailer30Controller,
@@ -310,7 +310,7 @@ class _ReportAddPageState extends State<ReportAddPage> {
                       Flexible(
                         child: TextField(
                           inputFormatters: [
-                            WhitelistingTextInputFormatter.digitsOnly
+                            FilteringTextInputFormatter.digitsOnly
                           ],
                           keyboardType: TextInputType.number,
                           controller: additionalIncomeController,

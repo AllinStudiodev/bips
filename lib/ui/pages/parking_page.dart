@@ -9,8 +9,8 @@ class ParkingPage extends StatefulWidget {
 
 class ParkingPageState extends State<ParkingPage> {
   final _debouncer = Debouncer(milliseconds: 500);
-  List<Parking> parkings = List();
-  List<Parking> filteredParkings = List();
+  List<Parking> parkings = [];
+  List<Parking> filteredParkings = [];
 
   @override
   void initState() {
