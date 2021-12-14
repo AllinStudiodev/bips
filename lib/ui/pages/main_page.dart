@@ -56,7 +56,7 @@ class _MainPageState extends State<MainPage> {
                     color: Colors.black.withOpacity(0.54),
                   ),
                 ),
-                onPressed: () {
+                onPressed: () async {
                   context.bloc<PageBloc>().add(GoToReportAddPage(Parking()));
                 }),
           ),

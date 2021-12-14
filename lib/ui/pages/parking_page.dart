@@ -66,14 +66,20 @@ class ParkingPageState extends State<ParkingPage> {
               itemBuilder: (BuildContext context, int index) {
                 return ParkingCard(
                   parking: filteredParkings[index],
-                  onTap: () {
-                    Navigator.of(context).push(
-                      MaterialPageRoute(builder: (_) {
-                        return ParkingDetailPage(
-                          parking: filteredParkings[index],
-                        );
-                      }),
+                  onTap: () async {
+                    // Navigator.of(context).push(
+                    //   MaterialPageRoute(builder: (_) {
+                    //     return ParkingDetailPage(
+                    //       parking: filteredParkings[index],
+                    //     );
+                    //   }),
+                    // );
+
+                    final pdfFile = await PdfApi.generateReport(
+                      filteredParkings[index],
                     );
+
+                    PdfApi.openFile(pdfFile);
                   },
                 );
               },

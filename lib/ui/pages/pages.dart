@@ -2,6 +2,7 @@ import 'package:bips/blocs/blocs.dart';
 import 'package:bips/models/models.dart';
 import 'package:bips/services/services.dart';
 import 'package:bips/shared/shared.dart';
+import 'package:bips/ui/pages/report_pdf.dart';
 import 'package:bips/ui/widgets/widgets.dart';
 
 import 'package:cloud_firestore/cloud_firestore.dart';

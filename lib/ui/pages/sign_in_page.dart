@@ -40,7 +40,7 @@ class _SignInPageState extends State<SignInPage> {
                     TextField(
                       onChanged: (text) {
                         setState(() {
-                          isEmailValid = EmailValidator.validate(text);
+                          isEmailValid = EmailValidator.validate(text.trim());
                         });
                       },
                       controller: emailController,
@@ -91,7 +91,7 @@ class _SignInPageState extends State<SignInPage> {
 
                                         SignInSignUpResult result =
                                             await AuthServices.signIn(
-                                                emailController.text,
+                                                emailController.text.trim(),
                                                 passwordController.text);
 
                                         if (result.user == null) {

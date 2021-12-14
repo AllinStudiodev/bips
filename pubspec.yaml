@@ -21,25 +21,29 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  cloud_firestore: ^0.13.6
+  email_validator: ^1.0.4
+  equatable: ^1.2.0
+  firebase_auth: ^0.16.1
+  firebase_storage: ^3.1.6
+  flushbar: ^1.10.4
   flutter:
     sdk: flutter
-
-  flutter_launcher_icons: ^0.7.5
-  firebase_auth: ^0.16.1
-  cloud_firestore: ^0.13.6
-  firebase_storage: ^3.1.6
-  equatable: ^1.2.0
-  provider: ^4.1.2
   flutter_bloc: ^6.0.0
-  email_validator: ^1.0.4
-  flushbar: ^1.10.4
+  flutter_launcher_icons: ^0.7.5
   flutter_spinkit: ^4.1.2+1
-  material_design_icons_flutter: ^4.0.5345
-  intl: ^0.16.1
-  image_picker: ^0.6.7+2
+  google_fonts: ^1.1.0
   http: ^0.12.1
+  image_picker: ^0.6.7+2
+  intl: ^0.16.1
+  material_design_icons_flutter: ^4.0.5345
   meta: ^1.1.8
+  open_file: ^3.0.0
   package_info: ^0.4.1
+  path_provider: ^1.6.28
+  pdf: ^2.0.0
+  permission_handler: ^5.1.0
+  provider: ^4.1.2
 
 dev_dependencies:
   flutter_test:
